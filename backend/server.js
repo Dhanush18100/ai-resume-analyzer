@@ -4,6 +4,14 @@ const dotenv=require('dotenv')
 const connectDB = require('./src/config/db')
 dotenv.config()
 
+// const {resume, selfDescription,jobDescription}=require('./src/s')
+
+//test -> to see whether the ai is working or not
+
+// const invokeGeminiAi=require('./src/services/aiService')
+
+// invokeGeminiAi()
+
 connectDB()
 const PORT=process.env.PORT || 3000
 
