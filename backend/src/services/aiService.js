@@ -7,8 +7,6 @@ const ai = new GoogleGenAI({
 });
 
 
-
-// async function invokeGeminiAi() {
 //   const response = await ai.models.generateContent({
 //     model: "gemini-2.5-flash",
 //     contents: "Hello gemini ! Explain what is Interview ?",
@@ -33,7 +31,7 @@ const interviewReportSchema = z.object({
     })).describe("Behavioral questions that can be asked in the interview along with their intention and how to answer them"),
     skillGaps: z.array(z.object({
         skill: z.string().describe("The skill which the candidate is lacking"),
-        severity: z.enum([ "low", "medium", "high" ]).describe("The severity of this skill gap, i.e. how important is this skill for the job and how much it can impact the candidate's chances")
+        severity: z.enum(["low", "medium", "high"]).describe("The severity of this skill gap, i.e. how important is this skill for the job and how much it can impact the candidate's chances")
     })).describe("List of skill gaps in the candidate's profile along with their severity"),
     preparationPlan: z.array(z.object({
         day: z.number().describe("The day number in the preparation plan, starting from 1"),
@@ -45,23 +43,73 @@ const interviewReportSchema = z.object({
 
 async function generateInterviewReport({ resume, selfDescription, jobDescription }) {
 
+   const prompt = `
+You are an expert technical interviewer.
 
-    const prompt = `Generate an interview report for a candidate with the following details:
-                        Resume: ${resume}
-                        Self Description: ${selfDescription}
-                        Job Description: ${jobDescription}
+Return a COMPLETE interview report in STRICT JSON format.
+
+IMPORTANT RULES:
+- matchScore must be a number between 0 and 100
+- technicalQuestions MUST be an ARRAY of objects (Minimum 4)
+- behavioralQuestions MUST be an ARRAY of objects (Minimum 2)
+- skillGaps MUST be an ARRAY of objects
+- preparationPlan MUST be an ARRAY of objects
+- DO NOT return plain text
+- DO NOT explain anything
+- ONLY return valid JSON
+
+Each technical question object must look like:
+{
+  "question": "...",
+  "intention": "...",
+  "answer": "..."
+}
+
+Each behavioral question object must look like:
+{
+  "question": "...",
+  "intention": "...",
+  "answer": "..."
+}
+
+Each skill gap object must look like:
+{
+  "skill": "...",
+  "severity": "low | medium | high"
+}
+
+Each preparation plan object must look like:
+{
+  "day": number,
+  "focus": "...",
+  "tasks": ["task1", "task2"]
+}
+
+Resume:
+${resume}
+
+Self Description:
+${selfDescription}
+
+Job Description:
+${jobDescription}
 `
 
-       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+
+   
+
+    const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
         contents: prompt,
         config: {
             responseMimeType: "application/json",
-            responseSchema: zodToJsonSchema(interviewReportSchema),
+          //responseJsonSchema: zodToJsonSchema(interviewReportSchema),
         }
     })
+   
 
     return JSON.parse(response.text)
+
 
 
 }
