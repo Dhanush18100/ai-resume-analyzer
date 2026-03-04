@@ -8,13 +8,84 @@ ai-resume-analyzer is a robust web application built on Express.js designed to s
 
 ## ✨ Features
 
-- 🔐 Auth
-- 🕸️ Web
+1. User Authentication
+
+Secure user registration and login system.
+
+Authentication implemented using JWT tokens stored in cookies.
+
+Allows users to securely access their analysis reports.
+
+2. Resume Upload and Parsing
+
+Users can upload their resume in PDF format.
+
+The system extracts text from the resume using pdf-parse for further analysis.
+
+3. Job Description Input
+
+Users can enter a job description for the role they want to apply for.
+
+The system compares the resume with the job description to evaluate compatibility.
+
+4. AI-Powered Resume Analysis
+
+Uses Gemini AI to analyze the resume content.
+
+Provides intelligent insights about strengths and areas for improvement.
+
+5. ATS Resume Score
+
+Calculates an ATS compatibility score.
+
+Shows how well the resume matches the job description.
+
+Suggests improvements to increase ATS score.
+
+6. Interview Question Generation
+
+AI generates interview questions based on the resume and job description:
+
+Technical interview questions
+
+Behavioral interview questions
+
+Role-specific questions
+
+7. Skill Gap Analysis
+
+Identifies missing or weak skills required for the job role.
+
+Helps users understand what skills they need to improve.
+
+8. Preparation Roadmap
+
+AI generates a personalized preparation plan.
+
+Provides guidance on what topics or technologies to learn.
+
+9. ATS-Friendly Resume Generation
+
+Automatically generates an optimized resume tailored for the job description.
+
+Improves chances of passing ATS screening.
+
+10. Report Dashboard
+
+Users can view their previous analysis reports.
+
+Helps track progress and improvements over time.
 
 
 ## 🛠️ Tech Stack
 
-- 🚀 Express.js
+-  Express.js
+-  Node.js
+-  MongoDB
+-  React.js
+-  CSS
+-  Axios
+-  (MERN)
 
 
 ## 📦 Key Dependencies
