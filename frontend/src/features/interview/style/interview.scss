@@ -482,7 +482,17 @@ $severity-low: #3fb950;
         border-color: rgba($severity-low, 0.25);
     }
 }
+.resume-download {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
+.download-text {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
 // ── Tablet (≤1024px) ─────────────────────────────────────────
 @media (max-width: 1024px) {
 
