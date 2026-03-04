@@ -4,7 +4,7 @@
 
 ## 📝 Description
 
-ai-resume-analyzer is a robust web application built on Express.js designed to simplify and enhance the resume review process through the power of artificial intelligence. Featuring a secure authentication system and a modern web interface, this platform allows users to upload their resumes and receive intelligent, data-driven feedback to improve their career prospects. Whether you are a job seeker aiming for your dream role or a recruiter looking for the perfect candidate, ai-resume-analyzer provides the tools needed to analyze skills, experience, and formatting effectively.
+ai-resume-analyzer is a robust web application built on MERN stack, designed to simplify and enhance the resume review process through the power of artificial intelligence. Featuring a secure authentication system and a modern web interface, this platform allows users to upload their resumes and receive intelligent, data-driven feedback to improve their career prospects. Whether you are a job seeker aiming for your dream role or a recruiter looking for the perfect candidate, ai-resume-analyzer provides the tools needed to analyze skills, experience, and formatting effectively.
 
 ## ✨ Features
 
