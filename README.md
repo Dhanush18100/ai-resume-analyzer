@@ -1,169 +1,206 @@
-AI Resume Analyzer & Interview Preparation Platform
+# ai-resume-analyzer
 
-An AI-powered web application that analyzes a user's resume or self-description against a job description and provides personalized feedback, interview preparation resources, and an ATS-optimized resume using Gemini AI.
+![License](https://img.shields.io/badge/license-ISC-green)
 
-The system helps job seekers understand their strengths, identify skill gaps, and prepare effectively for job interviews.
+## 📝 Description
 
-Features
-1. AI Resume Analysis
+ai-resume-analyzer is a robust web application built on MERN stack, designed to simplify and enhance the resume review process through the power of artificial intelligence. Featuring a secure authentication system and a modern web interface, this platform allows users to upload their resumes and receive intelligent, data-driven feedback to improve their career prospects. Whether you are a job seeker aiming for your dream role or a recruiter looking for the perfect candidate, ai-resume-analyzer provides the tools needed to analyze skills, experience, and formatting effectively.
 
-Users can upload a resume or enter their self-description.
+## ✨ Features
 
-The system analyzes the content using Gemini AI.
+🔐 1. User Authentication
 
-Generates insights about skills, experience, and improvements.
+- Secure user registration and login system.
 
-2. ATS Resume Score
+- Authentication implemented using JWT tokens stored in cookies.
 
-Calculates an ATS (Applicant Tracking System) compatibility score.
+- Allows users to securely access their analysis reports.
 
-Evaluates how well the resume matches the job description.
+📄 2. Resume Upload and Parsing
 
-Provides suggestions to improve ATS performance.
+- Users can upload their resume in PDF format.
 
-3. Interview Question Generation
+- The system extracts text from the resume using pdf-parse for further analysis.
 
-Based on the job description and resume, the AI generates:
+📝 3. Job Description Input
 
-Technical Questions
+- Users can enter a job description for the role they want to apply for.
 
-Behavioral Questions
+- The system compares the resume with the job description to evaluate compatibility.
 
-Role-specific Interview Questions
+🤖 4. AI-Powered Resume Analysis
 
-This helps candidates prepare for real interviews.
+- Uses Gemini AI to analyze the resume content.
 
-4. Skill Gap Analysis
+- Provides intelligent insights about strengths and areas for improvement.
 
-The system identifies missing skills required for the job role and highlights areas where the candidate needs improvement.
+📊 5. ATS Resume Score
 
-5. Personalized Preparation Roadmap
+- Calculates an ATS compatibility score.
 
-Gemini AI generates a step-by-step roadmap including:
+- Shows how well the resume matches the job description.
 
-Skills to learn
+- Suggests improvements to increase ATS score.
 
-Topics to study
+🎯 6. Interview Question Generation
 
-Suggested preparation strategy
+- AI generates interview questions based on the resume and job description:
 
-6. ATS Friendly Resume Generator
+- 💻 Technical interview questions
 
-The system automatically generates an ATS-optimized resume tailored for the selected job description.
+- 🧠 Behavioral interview questions
 
-7. User Authentication
+- 🧑‍💼 Role-specific interview questions
 
-User registration and login
+- 📉 7. Skill Gap Analysis
 
-Secure authentication using JWT cookies
+- Identifies missing or weak skills required for the job role.
 
-Users can view their previous analysis reports
+- Helps users understand what skills they need to improve.
 
-Tech Stack
-Frontend
+🗺️ 8. Preparation Roadmap
 
-React.js
+- AI generates a personalized preparation plan.
 
-Axios
+- Provides guidance on topics and technologies to learn.
 
-CSS / Tailwind
+📑 9. ATS-Friendly Resume Generation
 
-Backend
+- Automatically generates an optimized resume tailored for the job description.
 
-Node.js
+- Improves chances of passing ATS screening systems.
 
-Express.js
+📂 10. Report Dashboard
 
-MongoDB
+- Users can view their previous analysis reports.
 
-JWT Authentication
+- Helps track progress and improvements over time.
 
-Multer (file uploads)
+🛠️ Tech Stack
 
-AI Integration
+- ⚛️ React.js – Frontend user interface
 
-Google Gemini AI API
+- 🟢 Node.js – Backend runtime environment
 
-Resume text processing and analysis
+- 🚀 Express.js – Backend framework for APIs
 
-Other Tools
+- 🍃 MongoDB – Database for storing user data and reports
 
-pdf-parse (PDF resume parsing)
+- 🔗 Axios – API communication between frontend and backend
 
-REST APIs
+- 🎨 CSS – Styling and responsive UI design
 
-Git & GitHub
+## 📦 Key Dependencies
 
-System Workflow
-
-User registers and logs into the platform.
-
-User enters:
-
-Job Description
-
-Resume upload OR self-description
-
-Resume text is extracted from the PDF.
-
-The data is sent to Gemini AI.
-
-AI generates:
-
-Resume score
-
-Interview questions
-
-Skill gap analysis
-
-Preparation roadmap
-
-ATS optimized resume
-
-Results are displayed in a detailed report.
-
-Installation
-1. Clone the repository
-git clone https://github.com/yourusername/ai-resume-analyzer.git
-2. Navigate to project directory
-cd ai-resume-analyzer
-3. Install dependencies
-
-Backend
-
-cd backend
-npm install
-
-Frontend
-
-cd frontend
-npm install
-4. Environment Variables
-
-Create a .env file in backend.
-
-Example:
-
-PORT=3000
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
-GOOGLE_GENAI_API_KEY=your_gemini_api_key
-5. Run the project
-
-Backend
-
-npm run dev
-
-Future Improvements
-
-LinkedIn profile analysis
-
-Mock interview simulation
-
-Job recommendation system
-
-Resume improvement suggestions
-
-Frontend
-
-npm run dev
+```
+@google/genai: ^1.43.0
+@napi-rs/canvas: ^0.1.95
+bcryptjs: ^3.0.3
+cookie-parser: ^1.4.7
+cors: ^2.8.6
+dotenv: ^17.3.1
+express: ^5.2.1
+jsonwebtoken: ^9.0.3
+mongoose: ^9.2.3
+multer: ^2.1.0
+pdf-parse: ^1.1.1
+puppeteer: ^24.37.5
+zod: ^4.3.6
+zod-to-json-schema: ^3.25.1
+```
+
+## 🚀 Run Commands
+
+- **test**: `npm run test`
+- **dev**: `npm run dev`
+- **start**: `npm run start`
+
+
+## 📁 Project Structure
+
+```
+.
+├── backend
+│   ├── package.json
+│   ├── server.js
+│   ├── src
+│   │   ├── app.js
+│   │   ├── config
+│   │   │   └── db.js
+│   │   ├── controllers
+│   │   │   ├── authController.js
+│   │   │   └── interviewController.js
+│   │   ├── middlewares
+│   │   │   ├── authMiddlewar.js
+│   │   │   └── fileMiddleware.js
+│   │   ├── models
+│   │   │   ├── blacklistModel.js
+│   │   │   ├── interviewReportModel.js
+│   │   │   └── userModel.js
+│   │   ├── routes
+│   │   │   ├── authRoutes.js
+│   │   │   └── interviewRoutes.js
+│   │   └── services
+│   │       └── aiService.js
+│   └── vercel.json
+└── frontend
+    ├── eslint.config.js
+    ├── index.html
+    ├── package.json
+    ├── public
+    │   └── vite.svg
+    ├── src
+    │   ├── App.jsx
+    │   ├── app.routes.jsx
+    │   ├── features
+    │   │   ├── auth
+    │   │   │   ├── auth.context.jsx
+    │   │   │   ├── auth.form.scss
+    │   │   │   ├── components
+    │   │   │   │   └── Protected.jsx
+    │   │   │   ├── hooks
+    │   │   │   │   └── useAuth.js
+    │   │   │   ├── pages
+    │   │   │   │   ├── Login.jsx
+    │   │   │   │   └── Register.jsx
+    │   │   │   └── services
+    │   │   │       └── auth.api.js
+    │   │   └── interview
+    │   │       ├── hooks
+    │   │       │   └── useInterview.js
+    │   │       ├── inteview.context.jsx
+    │   │       ├── pages
+    │   │       │   ├── Home.jsx
+    │   │       │   └── Interview.jsx
+    │   │       ├── services
+    │   │       │   └── interviewAPI.js
+    │   │       └── style
+    │   │           ├── home.scss
+    │   │           └── interview.scss
+    │   ├── index.css
+    │   ├── main.jsx
+    │   ├── style
+    │   │   └── button.scss
+    │   └── style.scss
+    ├── vercel.json
+    └── vite.config.js
+```
+
+## 👥 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Fork** the repository
+2. **Clone** your fork: `git clone https://github.com/Dhanush18100/ai-resume-analyzer.git`
+3. **Create** a new branch: `git checkout -b feature/your-feature`
+4. **Commit** your changes: `git commit -am 'Add some feature'`
+5. **Push** to your branch: `git push origin feature/your-feature`
+6. **Open** a pull request
+
+Please ensure your code follows the project's style guidelines and includes tests where applicable.
+
+## 📜 License
+
+This project is licensed under the ISC License.
+
+---
