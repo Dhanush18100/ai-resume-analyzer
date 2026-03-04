@@ -43,46 +43,53 @@ const interviewReportSchema = z.object({
 
 async function generateInterviewReport({ resume, selfDescription, jobDescription }) {
 
-   const prompt = `
+const prompt = `
 You are an expert technical interviewer.
 
 Return a COMPLETE interview report in STRICT JSON format.
 
 IMPORTANT RULES:
 - matchScore must be a number between 0 and 100
+- title must be the job title extracted from the job description
 - technicalQuestions MUST be an ARRAY of objects (Minimum 4)
 - behavioralQuestions MUST be an ARRAY of objects (Minimum 2)
 - skillGaps MUST be an ARRAY of objects
-- preparationPlan MUST be an ARRAY of objects
+- preparationPlan MUST be an ARRAY of objects (7 days)
 - DO NOT return plain text
-- DO NOT explain anything
 - ONLY return valid JSON
 
-Each technical question object must look like:
-{
-  "question": "...",
-  "intention": "...",
-  "answer": "..."
-}
+Required JSON format:
 
-Each behavioral question object must look like:
 {
-  "question": "...",
-  "intention": "...",
-  "answer": "..."
-}
-
-Each skill gap object must look like:
-{
-  "skill": "...",
-  "severity": "low | medium | high"
-}
-
-Each preparation plan object must look like:
-{
-  "day": number,
-  "focus": "...",
-  "tasks": ["task1", "task2"]
+ "title": "Job title",
+ "matchScore": number,
+ "technicalQuestions":[
+   {
+     "question":"...",
+     "intention":"...",
+     "answer":"..."
+   }
+ ],
+ "behavioralQuestions":[
+   {
+     "question":"...",
+     "intention":"...",
+     "answer":"..."
+   }
+ ],
+ "skillGaps":[
+   {
+     "skill":"...",
+     "severity":"low | medium | high"
+   }
+ ],
+ "preparationPlan":[
+   {
+     "day":1,
+     "focus":"...",
+     "tasks":["task1","task2"]
+   }
+ ]
 }
 
 Resume:
@@ -93,7 +100,10 @@ ${selfDescription}
 
 Job Description:
 ${jobDescription}
-`
+`;
+
+
+
 
 
    
@@ -103,12 +113,14 @@ ${jobDescription}
         contents: prompt,
         config: {
             responseMimeType: "application/json",
-          //responseJsonSchema: zodToJsonSchema(interviewReportSchema),
+          //responseSchema: zodToJsonSchema(interviewReportSchema),
         }
     })
    
 
-    return JSON.parse(response.text)
+    const text = response.text || response.candidates?.[0]?.content?.parts?.[0]?.text;
+
+return JSON.parse(text);
 
 
 
