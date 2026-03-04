@@ -18,77 +18,77 @@ ai-resume-analyzer is a robust web application built on Express.js designed to s
 
 📄 2. Resume Upload and Parsing
 
-Users can upload their resume in PDF format.
+- Users can upload their resume in PDF format.
 
-The system extracts text from the resume using pdf-parse for further analysis.
+- The system extracts text from the resume using pdf-parse for further analysis.
 
 📝 3. Job Description Input
 
-Users can enter a job description for the role they want to apply for.
+- Users can enter a job description for the role they want to apply for.
 
-The system compares the resume with the job description to evaluate compatibility.
+- The system compares the resume with the job description to evaluate compatibility.
 
 🤖 4. AI-Powered Resume Analysis
 
-Uses Gemini AI to analyze the resume content.
+- Uses Gemini AI to analyze the resume content.
 
-Provides intelligent insights about strengths and areas for improvement.
+- Provides intelligent insights about strengths and areas for improvement.
 
 📊 5. ATS Resume Score
 
-Calculates an ATS compatibility score.
+- Calculates an ATS compatibility score.
 
-Shows how well the resume matches the job description.
+- Shows how well the resume matches the job description.
 
-Suggests improvements to increase ATS score.
+- Suggests improvements to increase ATS score.
 
 🎯 6. Interview Question Generation
 
-AI generates interview questions based on the resume and job description:
+- AI generates interview questions based on the resume and job description:
 
-💻 Technical interview questions
+- 💻 Technical interview questions
 
-🧠 Behavioral interview questions
+- 🧠 Behavioral interview questions
 
-🧑‍💼 Role-specific interview questions
+- 🧑‍💼 Role-specific interview questions
 
-📉 7. Skill Gap Analysis
+- 📉 7. Skill Gap Analysis
 
-Identifies missing or weak skills required for the job role.
+- Identifies missing or weak skills required for the job role.
 
-Helps users understand what skills they need to improve.
+- Helps users understand what skills they need to improve.
 
 🗺️ 8. Preparation Roadmap
 
-AI generates a personalized preparation plan.
+- AI generates a personalized preparation plan.
 
-Provides guidance on topics and technologies to learn.
+- Provides guidance on topics and technologies to learn.
 
 📑 9. ATS-Friendly Resume Generation
 
-Automatically generates an optimized resume tailored for the job description.
+- Automatically generates an optimized resume tailored for the job description.
 
-Improves chances of passing ATS screening systems.
+- Improves chances of passing ATS screening systems.
 
 📂 10. Report Dashboard
 
-Users can view their previous analysis reports.
+- Users can view their previous analysis reports.
 
-Helps track progress and improvements over time.
+- Helps track progress and improvements over time.
 
 🛠️ Tech Stack
 
-⚛️ React.js – Frontend user interface
+- ⚛️ React.js – Frontend user interface
 
-🟢 Node.js – Backend runtime environment
+- 🟢 Node.js – Backend runtime environment
 
-🚀 Express.js – Backend framework for APIs
+- 🚀 Express.js – Backend framework for APIs
 
-🍃 MongoDB – Database for storing user data and reports
+- 🍃 MongoDB – Database for storing user data and reports
 
-🔗 Axios – API communication between frontend and backend
+- 🔗 Axios – API communication between frontend and backend
 
-🎨 CSS – Styling and responsive UI design
+- 🎨 CSS – Styling and responsive UI design
 
 ## 📦 Key Dependencies
 
