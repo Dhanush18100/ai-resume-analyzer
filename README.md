@@ -10,11 +10,11 @@ ai-resume-analyzer is a robust web application built on Express.js designed to s
 
 🔐 1. User Authentication
 
-Secure user registration and login system.
+- Secure user registration and login system.
 
-Authentication implemented using JWT tokens stored in cookies.
+- Authentication implemented using JWT tokens stored in cookies.
 
-Allows users to securely access their analysis reports.
+- Allows users to securely access their analysis reports.
 
 📄 2. Resume Upload and Parsing
 
