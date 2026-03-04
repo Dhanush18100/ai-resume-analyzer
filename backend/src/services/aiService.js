@@ -52,10 +52,10 @@ const prompt = `
 // IMPORTANT RULES:
 // - matchScore must be a number between 0 and 100
 // - title must be the job title extracted from the job description
-// - technicalQuestions MUST be an ARRAY of objects (Minimum 4)
-// - behavioralQuestions MUST be an ARRAY of objects (Minimum 2)
+// - technicalQuestions MUST be an ARRAY of objects (Minimum 4 and maximum no-limit)
+// - behavioralQuestions MUST be an ARRAY of objects (Minimum 2 and maximum no-limit)
 // - skillGaps MUST be an ARRAY of objects
-// - preparationPlan MUST be an ARRAY of objects (7 days)
+// - preparationPlan MUST be an ARRAY of objects (minimun 7 days and maximum no-limit)
 // - DO NOT return plain text
 // - ONLY return valid JSON
 

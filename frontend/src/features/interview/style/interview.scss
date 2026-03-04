@@ -493,6 +493,33 @@ $severity-low: #3fb950;
   font-size: 0.75rem;
   font-weight: 500;
 }
+
+.home-btn {
+    background-color: transparent;
+    border: 1px solid #2a3348;
+    color: #e6edf3;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+
+    &:hover {
+        background-color: rgba(#ff2d78, 0.1);
+        border-color: #ff2d78;
+        color: #ff2d78;
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
 // ── Tablet (≤1024px) ─────────────────────────────────────────
 @media (max-width: 1024px) {
 

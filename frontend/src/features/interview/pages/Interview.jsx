@@ -11,6 +11,8 @@ const NAV_ITEMS = [
     { id: 'roadmap', label: 'Road Map', icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11" /></svg>) },
 ]
 
+
+
 // ── Sub-components ────────────────────────────────────────────────────────────
 const QuestionCard = ({ item, index }) => {
     const [ open, setOpen ] = useState(false)
@@ -68,7 +70,7 @@ const Interview = () => {
         }
     }, [ interviewId ])
 
-    
+    const navigate= useNavigate()
 
     if (loading || !report) {
         return (
@@ -90,6 +92,8 @@ const Interview = () => {
                 {/* ── Left Nav ── */}
                 <nav className='interview-nav'>
                     <div className="nav-content">
+                        <button onClick={()=>navigate('/')} className="home-btn">Home</button>
+                        
                         <p className='interview-nav__label'>Sections</p>
                         {NAV_ITEMS.map(item => (
                             <button
