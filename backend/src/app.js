@@ -6,14 +6,15 @@ const interviewRouter=require('./routes/interviewRoutes')
 
 
 const app=express()
-
-
-app.use(express.json())
-app.use(cookiePareser())
 app.use(cors({
     origin: ["http://localhost:5173","https://ai-resume-analyzer-frontend-one.vercel.app"],
     credentials: true
 }))
+
+
+app.use(express.json())
+app.use(cookiePareser())
+
 
 app.get("/",(req,res)=>{
     res.send("Server is running")
